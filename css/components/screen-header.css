@@ -1,0 +1,36 @@
+.screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--horizontal-space);
+  padding-top: 50px;
+  margin-bottom: 15px;
+}
+
+.screen-header__title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.screen-header__icons span {
+  margin-left: 20px;
+}
+
+@keyframes rotateGearAnimation {
+  from {
+    transform: scale(1.5) rotateZ(0deg);
+  }
+  to {
+    transform: scale(1.5) rotateZ(360deg);
+  }
+}
+
+.screen-header__icons .fa-gear {
+  /* 기본 상태: 회전 없이 원래 크기로 */
+  transform: rotateZ(0deg) scale(1);
+  transition: transform 0.2s ease; /* 스케일 변경을 부드럽게 */
+}
+
+.screen-header__icons .fa-gear:hover {
+  animation: rotateGearAnimation 2s linear infinite;
+}
